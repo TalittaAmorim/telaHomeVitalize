@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="menu/menuVitalize-main/menu.css">
     <title>Home</title>
 </head>
 <body>
     <main class="telaPrincipal">
         <header>
-            <div class="perfil">
+            <a href="#" class="perfil">
                 <img src="imgsHome/perfil.jpg" alt="">
-            </div>
+            </a>
             <div class="texto">
                 <p>Olá,</p>
                 <h4 class="nome_cache">Carla Melo</h4>
@@ -34,11 +35,18 @@
             </div>
         </section>
         <section class="doc">
-            
+            <footer id="barra"></footer>
         </section>
-        <footer>
-            <a href="menu/menuVitalize-main/index.html" alt="">
-        </footer>
+        <script>
+            // Usando fetch() para carregar o menu de menu/menu.html
+            fetch('menu/menuVitalize-main/index.html')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('barra').innerHTML = data;
+              })
+              .catch(err => console.error('Erro ao carregar o menu:', err));
+          </script>
+          
     </main>
 </body>
 </html>
